@@ -1,0 +1,61 @@
+{
+    "name": "hdruk/laravel-error-handler",
+    "description": "Drop-in exception handler for Laravel 12 APIs: sanitises client responses and routes full error detail to configurable reporting channels (GCP logging, Slack, custom).",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "exceptions", "error-handling", "logging", "slack", "gcp"],
+    "homepage": "https://github.com/HDRUK/laravel-error-handler",
+    "authors": [
+        {
+            "name": "HDRUK",
+            "homepage": "https://www.hdruk.ac.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "symfony/http-kernel": "^6.4|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "phpunit/phpunit": "^11.0",
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "HDRUK\\ErrorHandler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HDRUK\\ErrorHandler\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HDRUK\\ErrorHandler\\ErrorHandlerServiceProvider"
+            ],
+            "aliases": {
+                "ErrorHandler": "HDRUK\\ErrorHandler\\Facades\\ErrorHandler"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "pint": "vendor/bin/pint",
+        "stan": "vendor/bin/phpstan analyse --memory-limit=512M"
+    }
+}

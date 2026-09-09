@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Exceptions;
+
+/**
+ * Documentation-only reference of this application's error codes. The
+ * package itself doesn't read this file — it's a place to keep a
+ * human-readable index alongside `php artisan error-handler:list-codes`,
+ * since the authoritative source of truth is always the profile/config
+ * mapping (see config/error-handler.php).
+ */
+final class ErrorCodes
+{
+    // public const DB_UNAVAILABLE = 'ERR-DB-001';
+    // public const VALIDATION_FAILED = 'ERR-VALIDATION-001';
+}
